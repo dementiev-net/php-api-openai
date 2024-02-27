@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat GPT</title>
+    <link rel="icon" href="/favicon.ico"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+<div id="alert"></div>
+<nav class="navbar sticky-top navbar-light mb-5" style="background-color: #e3f2fd;">
+    <form class="w-100" id="msger-form" role="form">
+        <section class="container-fluid">
+            <div class="row w-100 align-items-center pb-3">
+                <div class="col">
+                    <a class="navbar-brand" href="#">
+                        <img src="./assets/chatgpt.svg" width="30" height="30" class="d-inline-block align-top" alt="Chat GPT">
+                        ID: <input type="text" id="id" hidden> <span id="id_session"></span>
+                    </a>
+                </div>
+                <div class="col-12 col-md-auto">
+                    <button type="button" class="btn btn-link pl-0 pr-0" id="delete-button">Удалить историю</button>
+                    <span class="badge badge-primary badge-pill" id="delete-buttoncount">0</span>
+                </div>
+            </div>
+            <div class="row w-100 align-items-center pb-3">
+                <div class="col-auto">Пресеты:</div>
+                <div class="col">
+                    <select id="msger-presetselect" class="custom-select"></select>
+                </div>
+            </div>
+            <div class="row w-100 align-items-top text-right">
+                <div class="col">
+                    <textarea id="msger-text" rows="10" class="form-control" placeholder="Введи текст..."></textarea>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <div>
+                        <label for="msger-modelselect" class="sr-only">Модель:</label><br>
+                        <select class="custom-select" id="msger-modelselect" disabled></select>
+                    </div>
+                    <div>
+                        <label for="msger-temperatureselect" class="sr-only">Размытость ответа:</label><br>
+                        <select class="custom-select" id="msger-temperatureselect" disabled>
+                            <option value="0">0 - Очень консервативный и согласованный</option>
+                            <option value="0.5">0.5 - Отчасти консервативный и согласованный</option>
+                            <option value="1" selected>1 - Сбалансированная творческость и согласованность</option>
+                            <option value="1.5">1.5 - Отчасти креативный и разнообразный</option>
+                            <option value="2">2 - Очень креативный и разнообразный</option>
+                        </select>
+                    </div>
+                    <div class="pb-3">
+                        <label for="msger-maxtokensselect" class="sr-only">Макс. токенов:</label><br>
+                        <select class="custom-select" id="msger-maxtokensselect" disabled>
+                            <option value="4096" selected>Макс. 4096 токенов</option>
+                            <option value="2048">Макс. 2048 токенов</option>
+                        </select>
+                    </div>
+                    <div class="pb-3 pb-lg-0">
+                        <button type="submit" class="btn btn-primary btn-lg" id="msger-send-btn">
+                            Спросить <i class="far fa-comment-dots ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+</nav>
+<section class="container">
+    <main id="msger-chat"></main>
+</section>
+<script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+<script src="./assets/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Editor directories and files
+.idea
+.DS_Store
+
+#config
+/api/config.php
+
+# dependencies
+/node_modules
+/vendor
+/assets/bundle.js
+.env
+
+# testing
+
+# production
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
